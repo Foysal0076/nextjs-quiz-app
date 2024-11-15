@@ -1,17 +1,13 @@
-interface Props extends React.SVGProps<SVGSVGElement> {
-  width?: number
-}
+import { SVGProps } from 'react'
 
-export const ToggleLightIcon = ({ width = 20, className, ...props }: Props) => {
-  if (typeof width !== 'number') throw new Error('width must be a number')
+import { cn } from '@/shared/utils'
 
-  const height = (width * 20) / 20
+interface Props extends SVGProps<SVGSVGElement> {}
 
+export const ToggleLightIcon = ({ className, ...props }: Props) => {
   return (
     <svg
-      className={className}
-      width={width}
-      height={height}
+      className={cn('h-5 w-5', className)}
       fill='currentColor'
       viewBox='0 0 20 20'
       xmlns='http://www.w3.org/2000/svg'

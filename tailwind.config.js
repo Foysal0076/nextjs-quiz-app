@@ -98,9 +98,6 @@ module.exports = {
           950: 'rgb(var(--colors-surface-950) / <alpha-value>)',
         },
       },
-      borderColor: {
-        DEFAULT: '#e5e7eb',
-      },
       boxShadow: {
         xs: 'var(--box-shadow-xs)',
         sm: 'var(--box-shadow-sm)',

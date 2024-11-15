@@ -3,7 +3,9 @@ import '@/styles/globals.css'
 import { Inter, Rubik } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
+import { AuthProvider } from '@/components/auth/auth-provider'
 import NextThemeProvider from '@/components/next-theme-provider'
+import { SeedMockData } from '@/components/seed-mock-data'
 import { metaObject } from '@/shared/config/site.config'
 
 const inter = Inter({
@@ -36,12 +38,13 @@ export default function RootLayout({
         href='/assets/favicons/favicon.ico'
       />
       <body>
-        <>
+        <AuthProvider>
           <NextThemeProvider>
+            <SeedMockData />
             <>{children}</>
             <Toaster position='top-center' reverseOrder={false} />
           </NextThemeProvider>
-        </>
+        </AuthProvider>
       </body>
     </html>
   )
