@@ -1,4 +1,4 @@
-# NextJs Tailwind Boilerplate
+# NextJs Tailwind Quiz App
 
 ## Getting Started
 

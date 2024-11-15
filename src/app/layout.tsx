@@ -1,13 +1,11 @@
 import '@/styles/globals.css'
-import '@/styles/globals.scss'
 
 import { Inter, Rubik } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 
-import NextThemeProvider from '@/components/Common/NextThemeProvider'
-import { Footer } from '@/components/Footer'
-import { Navbar } from '@/components/Navbar'
+import NextThemeProvider from '@/components/next-theme-provider'
+import { metaObject } from '@/shared/config/site.config'
 
-// eslint-disable-next-line no-unused-vars
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -19,11 +17,7 @@ const rubik = Rubik({
   display: 'swap',
 })
 
-export const metadata = {
-  title: 'Next.js + Tailwind CSS Starter',
-  description:
-    'A starter template to build amazing static websites with Next.js and Tailwind CSS',
-}
+export const metadata = metaObject()
 
 export default function RootLayout({
   children,
@@ -42,15 +36,12 @@ export default function RootLayout({
         href='/assets/favicons/favicon.ico'
       />
       <body>
-        <NextThemeProvider>
-          <div className='flex min-h-screen flex-col justify-between bg-surface-50 pt-[3.75rem] md:pt-[4.5rem]'>
-            <div>
-              <Navbar />
-              <main>{children}</main>
-            </div>
-            <Footer />
-          </div>
-        </NextThemeProvider>
+        <>
+          <NextThemeProvider>
+            <>{children}</>
+            <Toaster position='top-center' reverseOrder={false} />
+          </NextThemeProvider>
+        </>
       </body>
     </html>
   )
