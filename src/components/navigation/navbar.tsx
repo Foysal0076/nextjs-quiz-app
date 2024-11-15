@@ -17,7 +17,7 @@ export const Navbar = async () => {
             className='h5 font-extrabold text-primary-400'>
             <div className='flex items-center justify-center gap-2'>
               <AppIcon className='h-10 w-10 text-primary-600' />
-              <h1 className='h4 hidden max-md:text-5xl md:block'>Quiz</h1>
+              <h1 className='h4 hidden max-md:text-5xl md:block'>quizz</h1>
             </div>
           </Link>
         </div>

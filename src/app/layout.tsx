@@ -37,7 +37,7 @@ export default function RootLayout({
         sizes='32x32'
         href='/assets/favicons/favicon.ico'
       />
-      <body>
+      <body className='bg-neutral-10 dark:bg-surface-50'>
         <AuthProvider>
           <NextThemeProvider>
             <SeedMockData />

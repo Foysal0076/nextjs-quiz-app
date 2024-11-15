@@ -1,9 +1,11 @@
+import Questions from '@/components/templates/questions'
+
+export const metadata = {
+  title: 'All Questions',
+}
+
 const QuestionsPage = () => {
-  return (
-    <div>
-      <h1 className='h1'>QuestionsPage</h1>
-    </div>
-  )
+  return <Questions />
 }
 
 export default QuestionsPage

@@ -48,6 +48,8 @@
     --colors-surface-900: 15 23 42; /* #0f172a */
     --colors-surface-950: 2 6 23; /* #020617 */
 
+    --colors-danger: 239 68 68; /* #ef4444 */
+
     --backgroundblur-xl-backdrop-filter: 20px;
     --backgroundblur-lg-backdrop-filter: 12px;
     --backgroundblur-md-backdrop-filter: 8px;
