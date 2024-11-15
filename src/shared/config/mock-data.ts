@@ -35,24 +35,7 @@ export const DEFAULT_USERS: User[] = [
 export const DEFAULT_QUESTIONS: Question[] = [
   {
     id: '1',
-    title: 'What is the capital of France?',
-    createdAt: new Date(),
-    createdBy: {
-      id: '1',
-      name: 'Admin',
-    },
-    options: [
-      { id: '1', title: 'Paris' },
-      { id: '2', title: 'London' },
-      { id: '3', title: 'Berlin' },
-      { id: '4', title: 'Madrid' },
-    ],
-    correctAnswer: 'Paris',
-  },
-  {
-    id: '2',
-    title:
-      'Which motorcycle manufacturer is known for the slogan "The Art of Motorcycling"?',
+    title: 'What is your favorite motorcycle brand?',
     createdAt: new Date(),
     createdBy: {
       id: '1',
@@ -64,7 +47,7 @@ export const DEFAULT_QUESTIONS: Question[] = [
       { id: '3', title: 'Yamaha' },
       { id: '4', title: 'BMW' },
     ],
-    correctAnswer: 'Royal Enfield',
+    correctAnswer: '',
   },
   {
     id: '3',
@@ -97,6 +80,23 @@ export const DEFAULT_QUESTIONS: Question[] = [
       { id: '4', title: 'All Terrain Gear And Track Training' },
     ],
     correctAnswer: 'All The Gear, All The Time',
+  },
+  {
+    id: '2',
+    title:
+      'Which motorcycle manufacturer is known for the slogan "The Art of Motorcycling"?',
+    createdAt: new Date(),
+    createdBy: {
+      id: '1',
+      name: 'Admin',
+    },
+    options: [
+      { id: '4', title: 'BMW' },
+      { id: '1', title: 'Royal Enfield' },
+      { id: '2', title: 'Harley Davidson' },
+      { id: '3', title: 'Yamaha' },
+    ],
+    correctAnswer: 'Royal Enfield',
   },
   {
     id: '5',

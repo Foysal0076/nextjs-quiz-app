@@ -1,5 +1,5 @@
-import DeleteQuestion from '@/components/questions/delete-question'
-import Button from '@/components/ui/button'
+import DeleteQuestionAction from '@/components/questions/delete-question-action'
+import EditQuestionAction from '@/components/questions/edit-question-action'
 import { Question } from '@/types/quiz.types'
 
 type Props = {
@@ -11,12 +11,13 @@ const QuestionCard = ({ question }: Props) => {
     id,
     title,
     options,
+    correctAnswer,
     createdBy: { name: author },
   } = question
 
   return (
     <li className='list-none rounded-2xl border bg-neutral-0 p-4 shadow-sm dark:bg-surface-100/70 md:p-6'>
-      <h2 className='h5 font-semibold'>{title}</h2>
+      <h2 className='h5 mb-4 md:font-medium'>{title}</h2>
       {options && options.length > 0 ? (
         <>
           <p className='mt-2 text-sm font-bold md:text-base'>Options</p>
@@ -29,11 +30,14 @@ const QuestionCard = ({ question }: Props) => {
           </ol>
         </>
       ) : null}
+      {correctAnswer && (
+        <p className='mt-4 text-sm font-bold'>
+          Expected Answer: {correctAnswer}
+        </p>
+      )}
       <div className='mt-4 flex items-center justify-end gap-4'>
-        <Button variant='secondary' size='sm' className='max-sm:w-full'>
-          Edit
-        </Button>
-        <DeleteQuestion questionId={id} />
+        <EditQuestionAction question={question} />
+        <DeleteQuestionAction questionId={id} />
       </div>
     </li>
   )

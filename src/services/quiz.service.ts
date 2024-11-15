@@ -1,11 +1,12 @@
 import { STORAGE_KEYS } from '@/shared/config/constants'
+import { getLocalStorage } from '@/shared/utils'
 import { User } from '@/types'
 import { AnswerHistory, Question, UserAnswer } from '@/types/quiz.types'
 
 export const getQuestions = (includeDeleted = false): Question[] => {
-  return JSON.parse(
-    localStorage.getItem(STORAGE_KEYS.QUESTIONS) || '[]'
-  ).filter((question: Question) => includeDeleted || !question.isDeleted)
+  return (getLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS) || []).filter(
+    (question: Question) => includeDeleted || !question.isDeleted
+  )
 }
 
 export const addQuestion = (question: Question) => {

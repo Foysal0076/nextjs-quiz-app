@@ -48,7 +48,7 @@ export const Input = forwardRef<HTMLInputElement, TextFieldParams>(
           <label
             htmlFor={inputParams.id as string}
             className={cn(
-              'text-xs font-medium',
+              'text-sm font-semibold',
               {
                 'text-neutral-600 group-focus-within:text-primary-500 dark:group-focus-within:text-primary-300':
                   !error,
@@ -59,8 +59,7 @@ export const Input = forwardRef<HTMLInputElement, TextFieldParams>(
               },
               labelClassName
             )}>
-            {label}
-            {layout === 'horizontal' && <span>:</span>}
+            {label} {layout === 'horizontal' && <span>:</span>}
           </label>
         )}
         <div className='relative flex flex-col'>

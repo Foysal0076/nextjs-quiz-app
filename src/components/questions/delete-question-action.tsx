@@ -1,14 +1,16 @@
+import toast from 'react-hot-toast'
 import Swal from 'sweetalert2'
 
+import { TrashIcon } from '@/components/icons'
 import Button from '@/components/ui/button'
-import { useQuestionList } from '@/context/question-context'
+import { useQuestionStore } from '@/store/question-store'
 
 type Props = {
   questionId: string
 }
 
 const DeleteQuestion = ({ questionId }: Props) => {
-  const { removeQuestion } = useQuestionList()
+  const { removeQuestion } = useQuestionStore()
 
   const handleDelete = async () => {
     try {
@@ -30,6 +32,7 @@ const DeleteQuestion = ({ questionId }: Props) => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           removeQuestion(questionId)
+          toast.success('Question deleted successfully')
         } else if (result.isDismissed) {
           Swal.fire({
             title: 'Cancelled',
@@ -56,7 +59,10 @@ const DeleteQuestion = ({ questionId }: Props) => {
       size='sm'
       className='max-sm:w-full'
       onClick={handleDelete}>
-      Delete
+      <div className='flex items-center justify-center gap-2'>
+        <TrashIcon className='h-4 w-4 text-inherit' />
+        <span className='text-inherit'>Delete</span>
+      </div>
     </Button>
   )
 }

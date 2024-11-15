@@ -1,10 +1,10 @@
 'use client'
 
 import QuestionCard from '@/components/questions/question-card'
-import { useQuestionList } from '@/context/question-context'
+import { useQuestionStore } from '@/store/question-store'
 
 const QuestionList = () => {
-  const { questions } = useQuestionList()
+  const { questions } = useQuestionStore()
 
   return (
     <ul className='flex flex-col gap-4'>

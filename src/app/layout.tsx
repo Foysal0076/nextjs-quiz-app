@@ -4,6 +4,7 @@ import { Inter, Rubik } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import { AuthProvider } from '@/components/auth/auth-provider'
+import GlobalModal from '@/components/common/modal/global-modal'
 import NextThemeProvider from '@/components/next-theme-provider'
 import { SeedMockData } from '@/components/seed-mock-data'
 import { metaObject } from '@/shared/config/site.config'
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body className='bg-neutral-10 dark:bg-surface-50'>
         <AuthProvider>
           <NextThemeProvider>
+            <GlobalModal />
             <SeedMockData />
             <>{children}</>
             <Toaster position='top-center' reverseOrder={false} />
