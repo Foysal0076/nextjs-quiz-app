@@ -5,7 +5,6 @@ export const setLocalStorage = (key: string, value: any): boolean => {
   }
 
   if (!key) {
-    console.error('Storage key cannot be empty')
     return false
   }
 
@@ -13,7 +12,6 @@ export const setLocalStorage = (key: string, value: any): boolean => {
     localStorage.setItem(key, JSON.stringify(value))
     return true
   } catch (error) {
-    console.error('Error setting local storage:', error)
     return false
   }
 }

@@ -3,8 +3,8 @@
 import { useParams } from 'next/navigation'
 import { useMemo } from 'react'
 
+import Loader from '@/components/common/loader'
 import QuizSubmission from '@/components/quiz/quiz-submission'
-import Spinner from '@/components/ui/spinner'
 import { useAuth } from '@/shared/hooks/use-auth'
 import { useAnswerStore } from '@/store/answer-store'
 
@@ -21,17 +21,12 @@ const UserAnswers = () => {
 
   const userName = userAnswers[0].answers[0].user.name
 
-  if (isLoading)
-    return (
-      <div className='flex h-[70vh] items-center justify-center'>
-        <Spinner />
-      </div>
-    )
+  if (isLoading) return <Loader />
 
   if (!isAdmin && !isOwner) {
     return (
       <div className='flex h-[70vh] items-center justify-center'>
-        <h1 className='h2'>You are not authorized to view this page</h1>
+        <h1 className='h2'>You are not authorized to view this content</h1>
       </div>
     )
   }

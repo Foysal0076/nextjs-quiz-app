@@ -28,7 +28,6 @@ export const useQuestionForm = (initialData?: Question) => {
       correctAnswer: '',
     },
   })
-  console.log(errors)
   const onSubmit = (data: QuestionSchemaType) => {
     if (!session?.user) return
 

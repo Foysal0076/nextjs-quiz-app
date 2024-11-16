@@ -10,8 +10,8 @@ const AddQuestionAction = () => {
       className='px-4'
       onClick={() => openModal({ view: <QuestionFormModal /> })}>
       <div className='flex items-center justify-center gap-2'>
-        <PlusIcon className='h-4 w-4 text-inherit text-neutral-0' />
-        <span className='text-inherit text-neutral-0'>Add Question</span>
+        <PlusIcon className='h-4 w-4 text-inherit' />
+        <span className='text-inherit'>Add Question</span>
       </div>
     </Button>
   )

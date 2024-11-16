@@ -11,8 +11,11 @@ import { Question } from '@/types/quiz.types'
 type QuestionStore = {
   questions: Question[]
   refreshQuestionList: () => void
+  // eslint-disable-next-line
   addNewQuestion: (question: Question) => void
+  // eslint-disable-next-line
   removeQuestion: (id: string) => void
+  // eslint-disable-next-line
   editQuestion: (question: Question) => void
 }
 

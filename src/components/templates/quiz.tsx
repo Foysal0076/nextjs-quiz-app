@@ -2,8 +2,8 @@
 import { useSession } from 'next-auth/react'
 import { useEffect, useMemo, useState } from 'react'
 
+import Loader from '@/components/common/loader'
 import QuizForm from '@/components/quiz/quiz-form'
-import Spinner from '@/components/ui/spinner'
 import { useAnswerStore } from '@/store/answer-store'
 import { AnswerHistory } from '@/types/quiz.types'
 
@@ -24,12 +24,7 @@ const Quiz = () => {
     }
   }, [isAlreadySubmitted, status])
 
-  if (status === 'loading')
-    return (
-      <div className='flex h-[80vh] items-center justify-center'>
-        <Spinner />
-      </div>
-    )
+  if (status === 'loading') return <Loader />
 
   return (
     <div className='pb-10'>

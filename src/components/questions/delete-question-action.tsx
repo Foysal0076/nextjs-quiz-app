@@ -49,7 +49,7 @@ const DeleteQuestion = ({ questionId }: Props) => {
         }
       })
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 

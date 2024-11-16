@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 
+import Loader from '@/components/common/loader'
 import Button from '@/components/ui/button'
-import Spinner from '@/components/ui/spinner'
 import { routes } from '@/shared/config/routes.config'
 import { useAuth } from '@/shared/hooks/use-auth'
 import { useAnswerStore } from '@/store/answer-store'
@@ -13,12 +13,7 @@ const Submissions = () => {
   const { participants } = useAnswerStore()
   const { isLoading } = useAuth()
 
-  if (isLoading)
-    return (
-      <div className='flex h-[80vh] items-center justify-center'>
-        <Spinner />
-      </div>
-    )
+  if (isLoading) return <Loader />
 
   if (participants.length === 0) {
     return (

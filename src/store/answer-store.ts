@@ -15,7 +15,9 @@ type AnswerStore = {
 
   refreshAnswerList: () => void
   refreshParticipantList: () => void
+  // eslint-disable-next-line
   getUserAnswersByUserId: (userId: string) => AnswerHistory[]
+  // eslint-disable-next-line
   submitAnswers: (answers: UserAnswer[]) => void
 }
 

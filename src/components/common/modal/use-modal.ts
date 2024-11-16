@@ -10,6 +10,7 @@ type ModalTypes = {
 }
 
 type ModalStore = ModalTypes & {
+  // eslint-disable-next-line
   openModal: (params: Omit<ModalTypes, 'isOpen'>) => void
   closeModal: () => void
 }

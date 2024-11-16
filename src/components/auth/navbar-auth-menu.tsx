@@ -18,7 +18,6 @@ const NavbarAuthMenu = () => {
   const { data: session, status } = useSession()
 
   const isLogged = status === 'authenticated'
-  const isLoading = status === 'loading'
   const user = session?.user
 
   // const { data: userInfoAndLins, isLoading: isFetchingUserInfoAndLinks } =
@@ -33,7 +32,6 @@ const NavbarAuthMenu = () => {
     try {
       signOut({ callbackUrl: routes.login })
     } catch (error) {
-      console.log(error)
       signOut({ callbackUrl: routes.login })
     }
   }

@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import { useMemo } from 'react'
 
-import { AppIcon } from '@/components/icons'
+import Loader from '@/components/common/loader'
 import QuizSubmission from '@/components/quiz/quiz-submission'
 import Button from '@/components/ui/button'
-import Spinner from '@/components/ui/spinner'
 import { routes } from '@/shared/config/routes.config'
 import { useAuth } from '@/shared/hooks/use-auth'
 import { useAnswerStore } from '@/store/answer-store'
@@ -19,12 +18,7 @@ const UserHome = () => {
 
   const isSubmitted = userAnswers.length > 0
 
-  if (isLoading)
-    return (
-      <div className='flex h-[80vh] items-center justify-center'>
-        <Spinner />
-      </div>
-    )
+  if (isLoading) return <Loader />
 
   return (
     <div className='pb-10 md:pb-20'>
@@ -39,14 +33,6 @@ const UserHome = () => {
         </Link>
       </div>
       <QuizSubmission userAnswers={userAnswers} role='user' />
-      <div className='flex h-screen items-center justify-center gap-2'>
-        <AppIcon className='h-[300px] w-[300px] text-primary-600' />
-        <h1
-          translate='no'
-          className='hidden text-[250px] max-md:text-5xl md:block'>
-          quiz
-        </h1>
-      </div>
     </div>
   )
 }

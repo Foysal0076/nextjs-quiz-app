@@ -1,6 +1,5 @@
 export const getLocalStorage = <T>(key: string): T | null => {
   if (!key) {
-    console.error('Storage key cannot be empty')
     return null
   }
 
