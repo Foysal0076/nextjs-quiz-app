@@ -1,6 +1,6 @@
 'use client'
 
-import { signOut, useSession } from 'next-auth/react'
+import { signOut } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 
 import {
@@ -11,22 +11,15 @@ import {
 import ThemeSwitcher from '@/components/theme-switcher'
 import Avatar from '@/components/ui/avatar'
 import { routes } from '@/shared/config/routes.config'
+import { useAuth } from '@/shared/hooks/use-auth'
 import { cn } from '@/shared/utils'
 
 const NavbarAuthMenu = () => {
   const { theme, setTheme } = useTheme()
-  const { data: session, status } = useSession()
+  const { isLoading, userId, userName } = useAuth()
 
-  const isLogged = status === 'authenticated'
-  const user = session?.user
-
-  // const { data: userInfoAndLins, isLoading: isFetchingUserInfoAndLinks } =
-  //   useFetchUserLinksQuery(null)
-
-  // if (isLoading || isFetchingUserInfoAndLinks)
-  //   return <div className='bg-loader h-10 w-10 animate-pulse rounded-full' />
-
-  if (!isLogged) return <ThemeSwitcher />
+  if (!isLoading && !userId) return <ThemeSwitcher />
+  if (!userId) return null
 
   const handleLogout = async () => {
     try {
@@ -52,8 +45,7 @@ const NavbarAuthMenu = () => {
         className='flex cursor-pointer items-center gap-2'>
         <Avatar
           className='h-10 w-10 bg-primary-50 dark:bg-primary-200/10 dark:text-primary-50'
-          name={user?.name ?? ''}
-          url={user?.image ?? ''}
+          name={userName ?? ''}
         />
       </div>
       <menu

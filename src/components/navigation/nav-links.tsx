@@ -2,19 +2,19 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useSession } from 'next-auth/react'
 
 import Spinner from '@/components/ui/spinner'
 import { routes } from '@/shared/config/routes.config'
+import { useAuth } from '@/shared/hooks/use-auth'
 import { cn } from '@/shared/utils'
 
 const NavLinks = () => {
   const pathname = usePathname()
-  const { data: session, status } = useSession()
-  const isLoading = status === 'loading'
+  const { isLoading, role } = useAuth()
+
   if (isLoading) return <Spinner />
 
-  const isAdmin = session?.user?.role === 'admin'
+  const isAdmin = role === 'admin'
 
   const isActive = (path: string) => pathname === path
   return (
