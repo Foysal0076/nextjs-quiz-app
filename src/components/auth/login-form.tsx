@@ -20,7 +20,7 @@ const LoginForm = () => {
         onSubmit={handleSubmit(onsubmit)}>
         <Input
           label='Email'
-          placeholder='Enter your email'
+          placeholder='admin@test.com'
           {...register('email')}
           error={errors?.email ? errors.email.message : ''}
           startAdornment={{
@@ -33,7 +33,7 @@ const LoginForm = () => {
         <Input
           type='password'
           label='Password'
-          placeholder='Enter your password'
+          placeholder='admin'
           {...register('password')}
           error={errors?.password ? errors.password.message : ''}
           startAdornment={{
@@ -46,6 +46,7 @@ const LoginForm = () => {
         <Button type='submit' className='mt-2 w-full' loading={loading}>
           Login
         </Button>
+
         <div className='flex flex-col items-center justify-center gap-1'>
           <p className='text-sm text-neutral-800'>
             Don&apos;t have an account?
