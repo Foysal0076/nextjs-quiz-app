@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import {
   addQuestion,
   deleteQuestion,
-  getQuestions,
+  getActiveQuestions,
   updateQuestion,
 } from '@/services/quiz.service'
 import { Question } from '@/types/quiz.types'
@@ -20,7 +20,7 @@ export const useQuestionStore = create<QuestionStore>((set) => ({
   questions: [],
 
   refreshQuestionList: () => {
-    const questions = getQuestions()
+    const questions = getActiveQuestions()
     set({ questions })
   },
 

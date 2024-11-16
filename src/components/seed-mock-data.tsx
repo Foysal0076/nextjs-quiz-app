@@ -6,7 +6,7 @@ import { STORAGE_KEYS } from '@/shared/config/constants'
 import { DEFAULT_QUESTIONS, DEFAULT_USERS } from '@/shared/config/mock-data'
 import { getLocalStorage, setLocalStorage } from '@/shared/utils'
 import { User } from '@/types'
-import { Question } from '@/types/quiz.types'
+import { Question, UserAnswer } from '@/types/quiz.types'
 
 export const SeedMockData = () => {
   useEffect(() => {
@@ -19,6 +19,19 @@ export const SeedMockData = () => {
     const questions = getLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS)
     if (!questions) {
       setLocalStorage(STORAGE_KEYS.QUESTIONS, DEFAULT_QUESTIONS)
+    }
+
+    const answers = getLocalStorage<UserAnswer[]>(STORAGE_KEYS.ANSWERS)
+    if (!answers) {
+      setLocalStorage(STORAGE_KEYS.ANSWERS, [])
+    }
+
+    const participantIds = getLocalStorage<string[]>(
+      STORAGE_KEYS.PARTICIPANT_IDS
+    )
+
+    if (!participantIds) {
+      setLocalStorage(STORAGE_KEYS.PARTICIPANT_IDS, [])
     }
   }, [])
 

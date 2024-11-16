@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import NavbarAuthMenu from '@/components/auth/navbar-auth-menu'
 import { AppIcon } from '@/components/icons'
+import NavLinks from '@/components/navigation/nav-links'
 import { routes } from '@/shared/config/routes.config'
 
 export const Navbar = async () => {
@@ -17,11 +18,16 @@ export const Navbar = async () => {
             className='h5 font-extrabold text-primary-400'>
             <div className='flex items-center justify-center gap-2'>
               <AppIcon className='h-10 w-10 text-primary-600' />
-              <h1 className='h4 hidden max-md:text-5xl md:block'>quizz</h1>
+              <h1 translate='no' className='h4 hidden max-md:text-5xl md:block'>
+                quiz
+              </h1>
             </div>
           </Link>
         </div>
-        <NavbarAuthMenu />
+        <div className='flex items-center gap-4'>
+          <NavLinks />
+          <NavbarAuthMenu />
+        </div>
       </nav>
     </header>
   )
