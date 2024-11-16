@@ -11,7 +11,7 @@ const QuestionCard = ({ question }: Props) => {
 
   return (
     <li className='list-none rounded-2xl border bg-neutral-0 p-4 shadow-sm dark:bg-surface-100/70 md:p-6'>
-      <h2 className='h5 mb-4 md:font-medium'>{title}</h2>
+      <h2 className='h5 mb-4'>{title}</h2>
       {options && options.length > 0 ? (
         <>
           <ol className='ml-1 mt-1 flex list-outside list-disc flex-col gap-1 pl-4'>

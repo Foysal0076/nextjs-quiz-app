@@ -7,7 +7,7 @@ const AddQuestionAction = () => {
   const { openModal } = useModal()
   return (
     <Button
-      className='px-4'
+      className='px-2 max-sm:h-9 md:px-4'
       onClick={() => openModal({ view: <QuestionFormModal /> })}>
       <div className='flex items-center justify-center gap-2'>
         <PlusIcon className='h-4 w-4 text-inherit' />

@@ -28,7 +28,7 @@ const Quiz = () => {
 
   return (
     <div className='pb-10'>
-      <h1 className='h2 mb-8'>
+      <h1 className='page-title mb-8'>
         {isAlreadySubmitted ? 'Edit Your Response' : 'Submit A Response'}
       </h1>
       <QuizForm

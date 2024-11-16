@@ -25,7 +25,7 @@ const Submissions = () => {
 
   return (
     <div className='pb-10'>
-      <h1 className='h2 mb-6'>
+      <h1 className='page-title mb-6'>
         Submissions{' '}
         <span className='text-primary-500'>({participants.length})</span>
       </h1>
@@ -46,7 +46,7 @@ const UserListItem = ({ participant }: { participant: Participant }) => {
     <li
       className='flex items-center justify-between rounded-2xl border bg-neutral-0 p-4 shadow-sm dark:bg-surface-100/70'
       key={participant.id}>
-      <p className='text-lg font-semibold'>{participant.name}</p>
+      <p className='md:text-lg'>{participant.name}</p>
       <Link href={url}>
         <Button variant='secondary' size='sm'>
           View

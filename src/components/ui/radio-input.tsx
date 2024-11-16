@@ -23,7 +23,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
         {label && (
           <label
             htmlFor={id}
-            className='cursor-pointer select-none text-sm font-medium text-neutral-700'>
+            className='cursor-pointer select-none text-sm text-neutral-700'>
             {label}
           </label>
         )}

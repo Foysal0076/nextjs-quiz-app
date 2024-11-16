@@ -184,4 +184,8 @@
   .h6 {
     @apply text-[1.125rem] font-normal leading-[1.375rem] md:text-[1.375rem] md:leading-[1.625rem];
   }
+
+  .page-title {
+    @apply h3 font-normal;
+  }
 }

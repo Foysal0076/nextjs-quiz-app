@@ -9,7 +9,7 @@ type Props = {
 
 const SubmissionItem = ({ question, answers, role }: Props) => {
   return (
-    <li className='rounded-2xl border border-gray-200 p-4 shadow-sm'>
+    <li className='rounded-2xl border p-4 shadow-sm'>
       <h2 className='font-Inter font-medium text-neutral-600 md:text-lg'>
         Question: {question}
       </h2>
@@ -24,7 +24,7 @@ const SubmissionItem = ({ question, answers, role }: Props) => {
           <p className='text-sm font-medium'>Previous answers</p>
           <ul className='space-y-2'>
             {answers.slice(1).map((answer, index) => (
-              <li className='text-sm font-medium text-neutral-400' key={index}>
+              <li className='text-sm text-neutral-500' key={index}>
                 {answer.answer}
               </li>
             ))}

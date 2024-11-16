@@ -26,7 +26,9 @@ const UserAnswers = () => {
   if (!isAdmin && !isOwner) {
     return (
       <div className='flex h-[70vh] items-center justify-center'>
-        <h1 className='h2'>You are not authorized to view this content</h1>
+        <h1 className='h2 font-normal'>
+          You are not authorized to view this content
+        </h1>
       </div>
     )
   }

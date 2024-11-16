@@ -11,7 +11,7 @@ const Questions = () => {
   if (isLoading) return <Loader />
 
   return (
-    <div className='flex flex-col gap-6 pb-10 md:pb-20'>
+    <div className='flex flex-col gap-2 pb-10 md:gap-6 md:pb-20'>
       <QuestionListHeader />
       <QuestionList />
     </div>

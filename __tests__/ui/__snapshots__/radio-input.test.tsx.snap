@@ -12,7 +12,7 @@ exports[`Radio Component matches snapshot 1`] = `
       type="radio"
     />
     <label
-      class="cursor-pointer select-none text-sm font-medium text-neutral-700"
+      class="cursor-pointer select-none text-sm text-neutral-700"
       for="test-radio"
     >
       Test Option

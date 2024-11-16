@@ -17,6 +17,7 @@ const NavLinks = () => {
   const isAdmin = role === 'admin'
 
   const isActive = (path: string) => pathname === path
+
   return (
     <div className='flex items-center gap-4'>
       {isAdmin ? (
@@ -24,7 +25,7 @@ const NavLinks = () => {
           <Link
             href={routes.home}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.home) && 'text-primary-400'
             )}>
             Home
@@ -32,7 +33,7 @@ const NavLinks = () => {
           <Link
             href={routes.quiz}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.quiz) && 'text-primary-400'
             )}>
             Quiz
@@ -40,7 +41,7 @@ const NavLinks = () => {
           <Link
             href={routes.questions}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.questions) && 'text-primary-400'
             )}>
             Questions
@@ -48,7 +49,7 @@ const NavLinks = () => {
           <Link
             href={routes.submissions}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.submissions) && 'text-primary-400'
             )}>
             Submissions
@@ -59,7 +60,7 @@ const NavLinks = () => {
           <Link
             href={routes.home}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.home) && 'text-primary-400'
             )}>
             Home
@@ -67,7 +68,7 @@ const NavLinks = () => {
           <Link
             href={routes.quiz}
             className={cn(
-              'font-semibold',
+              'font-medium',
               isActive(routes.quiz) && 'text-primary-400'
             )}>
             Quiz
