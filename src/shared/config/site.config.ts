@@ -13,7 +13,7 @@ export const metaObject = (
   description: string = siteConfig.description
 ): Metadata => {
   return {
-    metadataBase: new URL(process.env.SITE_URL!),
+    metadataBase: new URL(process.env.SITE_URL ?? 'http://localhost:3000'),
     alternates: {
       canonical: '/',
     },
