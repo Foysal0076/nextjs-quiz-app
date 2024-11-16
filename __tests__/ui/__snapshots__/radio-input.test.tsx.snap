@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Component matches snapshot 1`] = `
+<div>
+  <div
+    class="flex items-center space-x-2"
+  >
+    <input
+      class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-primary-500 dark:focus:ring-primary-600"
+      id="test-radio"
+      name="test-group"
+      type="radio"
+    />
+    <label
+      class="cursor-pointer select-none text-sm font-medium text-neutral-700"
+      for="test-radio"
+    >
+      Test Option
+    </label>
+  </div>
+</div>
+`;
