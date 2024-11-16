@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useMemo } from 'react'
 
+import { AppIcon } from '@/components/icons'
 import QuizSubmission from '@/components/quiz/quiz-submission'
 import Button from '@/components/ui/button'
 import Spinner from '@/components/ui/spinner'
@@ -38,6 +39,14 @@ const UserHome = () => {
         </Link>
       </div>
       <QuizSubmission userAnswers={userAnswers} role='user' />
+      <div className='flex h-screen items-center justify-center gap-2'>
+        <AppIcon className='h-[300px] w-[300px] text-primary-600' />
+        <h1
+          translate='no'
+          className='hidden text-[250px] max-md:text-5xl md:block'>
+          quiz
+        </h1>
+      </div>
     </div>
   )
 }
