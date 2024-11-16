@@ -5,8 +5,8 @@ import { Toaster } from 'react-hot-toast'
 
 import { AuthProvider } from '@/components/auth/auth-provider'
 import GlobalModal from '@/components/common/modal/global-modal'
-import NextThemeProvider from '@/components/next-theme-provider'
-import { SeedMockData } from '@/components/seed-mock-data'
+import NextThemeProvider from '@/components/common/next-theme-provider'
+import { SeedMockData } from '@/components/common/seed-mock-data'
 import { metaObject } from '@/shared/config/site.config'
 
 const inter = Inter({

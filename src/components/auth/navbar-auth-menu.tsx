@@ -3,12 +3,12 @@
 import { signOut } from 'next-auth/react'
 import { useTheme } from 'next-themes'
 
+import ThemeSwitcher from '@/components/common/theme-switcher'
 import {
   SignOutIcon,
   ToggleDarkIcon,
   ToggleLightIcon,
 } from '@/components/icons'
-import ThemeSwitcher from '@/components/theme-switcher'
 import Avatar from '@/components/ui/avatar'
 import { routes } from '@/shared/config/routes.config'
 import { useAuth } from '@/shared/hooks/use-auth'
