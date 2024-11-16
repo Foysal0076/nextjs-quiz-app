@@ -25,7 +25,7 @@ const NavLinks = () => {
           <Link
             href={routes.home}
             className={cn(
-              'font-medium',
+              'hidden font-medium md:block',
               isActive(routes.home) && 'text-primary-400'
             )}>
             Home
@@ -33,7 +33,7 @@ const NavLinks = () => {
           <Link
             href={routes.quiz}
             className={cn(
-              'font-medium',
+              'hidden font-medium md:block',
               isActive(routes.quiz) && 'text-primary-400'
             )}>
             Quiz
