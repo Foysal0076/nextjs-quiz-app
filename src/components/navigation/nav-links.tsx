@@ -27,6 +27,14 @@ const NavLinks = () => {
               'font-semibold',
               isActive(routes.home) && 'text-primary-400'
             )}>
+            Home
+          </Link>
+          <Link
+            href={routes.quiz}
+            className={cn(
+              'font-semibold',
+              isActive(routes.quiz) && 'text-primary-400'
+            )}>
             Quiz
           </Link>
           <Link
@@ -37,10 +45,33 @@ const NavLinks = () => {
             )}>
             Questions
           </Link>
+          <Link
+            href={routes.submissions}
+            className={cn(
+              'font-semibold',
+              isActive(routes.submissions) && 'text-primary-400'
+            )}>
+            Submissions
+          </Link>
         </>
       ) : (
         <>
-          <Link href={routes.home}>Home</Link>
+          <Link
+            href={routes.home}
+            className={cn(
+              'font-semibold',
+              isActive(routes.home) && 'text-primary-400'
+            )}>
+            Home
+          </Link>
+          <Link
+            href={routes.quiz}
+            className={cn(
+              'font-semibold',
+              isActive(routes.quiz) && 'text-primary-400'
+            )}>
+            Quiz
+          </Link>
         </>
       )}
     </div>

@@ -37,7 +37,7 @@ const UserHome = () => {
           <Button>{isSubmitted ? 'Edit answers' : 'Submit a response'}</Button>
         </Link>
       </div>
-      <QuizSubmission userAnswers={userAnswers} />
+      <QuizSubmission userAnswers={userAnswers} role='user' />
     </div>
   )
 }

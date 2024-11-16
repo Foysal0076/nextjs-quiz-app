@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { Controller } from 'react-hook-form'
 
 import { useQuizForm } from '@/components/quiz/use-quiz-form'
@@ -24,6 +25,12 @@ const QuizForm = ({ initialData }: Props) => {
     isMCQ,
     onSubmit,
   } = useQuizForm(initialData)
+
+  const router = useRouter()
+
+  const handleCancel = () => {
+    router.back()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='space-y-8'>
@@ -78,6 +85,13 @@ const QuizForm = ({ initialData }: Props) => {
       ))}
 
       <div className='sticky bottom-0 flex justify-end space-x-2 bg-neutral-10 py-8 dark:bg-surface-50'>
+        <Button
+          type='button'
+          variant='secondary'
+          className='max-sm:w-full'
+          onClick={handleCancel}>
+          Cancel
+        </Button>
         <Button type='submit' className='max-sm:w-full' loading={loading}>
           {isEditForm ? 'Update Answers' : 'Submit Quiz'}
         </Button>

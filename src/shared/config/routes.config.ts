@@ -4,6 +4,6 @@ export const routes = {
   home: '/',
   questions: '/questions',
   quiz: '/quiz',
-  answers: '/answers',
-  userSubmission: (id: string) => `/answers/${id}`, //auth, user who submitted and admin can access
+  submissions: '/submissions',
+  userSubmission: (id: string) => `/submissions/${id}`, //auth, user who submitted and admin can access
 }

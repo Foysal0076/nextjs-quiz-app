@@ -8,14 +8,14 @@ import { useAnswerStore } from '@/store/answer-store'
 import { AnswerHistory } from '@/types/quiz.types'
 
 const Quiz = () => {
-  const { participantIds, getUserAnswersByUserId } = useAnswerStore()
+  const { participants, getUserAnswersByUserId } = useAnswerStore()
   const { data: session, status } = useSession()
 
   const [userAnswers, setUserAnswers] = useState<AnswerHistory[]>([])
 
   const isAlreadySubmitted = useMemo(
-    () => participantIds.includes(session?.user.id as string),
-    [participantIds, session?.user.id]
+    () => participants.some((p) => p.id === session?.user.id),
+    [participants, session?.user.id]
   )
 
   useEffect(() => {

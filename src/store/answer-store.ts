@@ -1,17 +1,17 @@
 import { create } from 'zustand'
 
 import {
-  addParticipantId,
+  addParticipant,
   getAllSubmissions,
-  getParticipantIds,
+  getParticipants,
   getUserAnswers,
   submitAnswers,
 } from '@/services/quiz.service'
-import { AnswerHistory, UserAnswer } from '@/types/quiz.types'
+import { AnswerHistory, Participant, UserAnswer } from '@/types/quiz.types'
 
 type AnswerStore = {
   answers: UserAnswer[]
-  participantIds: string[]
+  participants: Participant[]
 
   refreshAnswerList: () => void
   refreshParticipantList: () => void
@@ -21,7 +21,7 @@ type AnswerStore = {
 
 export const useAnswerStore = create<AnswerStore>((set, get) => ({
   answers: [],
-  participantIds: [],
+  participants: [],
 
   refreshAnswerList: () => {
     const answers = getAllSubmissions()
@@ -29,15 +29,16 @@ export const useAnswerStore = create<AnswerStore>((set, get) => ({
   },
 
   refreshParticipantList: () => {
-    const participantIds = getParticipantIds()
-    set({ participantIds })
+    const participants = getParticipants()
+    set({ participants })
   },
 
   submitAnswers: (answers: UserAnswer[]) => {
     submitAnswers(answers)
     const userId = answers[0].user.id
-    if (!get().participantIds.includes(userId)) {
-      addParticipantId(userId)
+    const userName = answers[0].user.name
+    if (!get().participants.some((p) => p.id === userId)) {
+      addParticipant({ id: userId, name: userName })
       get().refreshParticipantList()
     }
     get().refreshAnswerList()

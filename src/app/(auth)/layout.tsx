@@ -18,7 +18,7 @@ const AuthLayout = async ({ children }: Props) => {
   return (
     <div className='flex min-h-screen flex-col justify-between pt-[3.75rem] md:pt-0'>
       <Navbar />
-      <main className='mx-auto w-full max-w-[96rem] grow px-4 pt-4 md:px-6 lg:pt-0'>
+      <main className='mx-auto w-full max-w-7xl grow px-4 pt-4 md:px-6 lg:pt-0'>
         {children}
       </main>
     </div>

@@ -1,7 +1,8 @@
 import { User } from '@/types/user.types'
 
-type ShortUserInfo = Pick<User, 'id' | 'name'>
-type ShortQuestionInfo = Pick<Question, 'id' | 'title'>
+export type ShortUserInfo = Pick<User, 'id' | 'name'>
+export type ShortQuestionInfo = Pick<Question, 'id' | 'title'>
+export type Participant = ShortUserInfo
 
 export type QuestionOption = {
   id: string

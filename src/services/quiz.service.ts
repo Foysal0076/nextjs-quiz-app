@@ -1,7 +1,12 @@
 import { STORAGE_KEYS } from '@/shared/config/constants'
 import { getLocalStorage, setLocalStorage } from '@/shared/utils'
 import { User } from '@/types'
-import { AnswerHistory, Question, UserAnswer } from '@/types/quiz.types'
+import {
+  AnswerHistory,
+  Participant,
+  Question,
+  UserAnswer,
+} from '@/types/quiz.types'
 
 export const getAllQuestions = (): Question[] => {
   return getLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS) || []
@@ -107,12 +112,12 @@ export const submitAnswers = (answers: UserAnswer[]) => {
   setLocalStorage(STORAGE_KEYS.ANSWERS, allSubmissions)
 }
 
-export const getParticipantIds = (): string[] => {
-  return getLocalStorage<string[]>(STORAGE_KEYS.PARTICIPANT_IDS) || []
+export const getParticipants = (): Participant[] => {
+  return getLocalStorage<Participant[]>(STORAGE_KEYS.PARTICIPANT_IDS) || []
 }
 
-export const addParticipantId = (userId: string) => {
-  const participantIds = getParticipantIds()
-  participantIds.push(userId)
-  setLocalStorage(STORAGE_KEYS.PARTICIPANT_IDS, participantIds)
+export const addParticipant = (participant: Participant) => {
+  const participants = getParticipants()
+  participants.push(participant)
+  setLocalStorage(STORAGE_KEYS.PARTICIPANT_IDS, participants)
 }
