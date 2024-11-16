@@ -118,6 +118,6 @@ export const getParticipants = (): Participant[] => {
 
 export const addParticipant = (participant: Participant) => {
   const participants = getParticipants()
-  participants.push(participant)
+  participants.unshift(participant)
   setLocalStorage(STORAGE_KEYS.PARTICIPANT_IDS, participants)
 }
