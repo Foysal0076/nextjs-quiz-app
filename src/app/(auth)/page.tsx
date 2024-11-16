@@ -1,9 +1,7 @@
+import UserHome from '@/components/templates/user-home'
+
 const UserHomePage = () => {
-  return (
-    <div>
-      <h1>User Home Page</h1>
-    </div>
-  )
+  return <UserHome />
 }
 
 export default UserHomePage

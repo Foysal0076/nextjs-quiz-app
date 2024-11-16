@@ -77,7 +77,7 @@ const QuizForm = ({ initialData }: Props) => {
         </div>
       ))}
 
-      <div className='flex justify-end space-x-2'>
+      <div className='sticky bottom-0 flex justify-end space-x-2 bg-neutral-10 py-8 dark:bg-surface-50'>
         <Button type='submit' className='max-sm:w-full' loading={loading}>
           {isEditForm ? 'Update Answers' : 'Submit Quiz'}
         </Button>

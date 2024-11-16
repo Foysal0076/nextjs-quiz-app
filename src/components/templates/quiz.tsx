@@ -32,7 +32,7 @@ const Quiz = () => {
     )
 
   return (
-    <div className='pb-10 md:pb-20'>
+    <div className='pb-10'>
       <h1 className='h2 mb-8'>
         {isAlreadySubmitted ? 'Edit Your Response' : 'Submit A Response'}
       </h1>

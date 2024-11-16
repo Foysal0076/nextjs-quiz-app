@@ -5,8 +5,8 @@ export const metadata = {
   description: 'Submit a response to the quiz',
 }
 
-const UserHomePage = () => {
+const QuizPage = () => {
   return <Quiz />
 }
 
-export default UserHomePage
+export default QuizPage
