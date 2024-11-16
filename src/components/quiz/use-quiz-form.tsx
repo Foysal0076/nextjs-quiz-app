@@ -1,9 +1,9 @@
 import { useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { routes } from '@/shared/config/routes.config'
+import { useAuth } from '@/shared/hooks/use-auth'
 import { generateID } from '@/shared/utils/generateID'
 import { useAnswerStore } from '@/store/answer-store'
 import { useQuestionStore } from '@/store/question-store'
@@ -18,7 +18,7 @@ export const useQuizForm = (initialData?: AnswerHistory[]) => {
 
   const { questions } = useQuestionStore()
   const { submitAnswers } = useAnswerStore()
-  const { data: session } = useSession()
+  const { userId, userName } = useAuth()
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
@@ -51,8 +51,7 @@ export const useQuizForm = (initialData?: AnswerHistory[]) => {
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true)
-    const user = session?.user
-    if (!user) return
+    if (!userId) return
 
     const payload: any[] = Object.entries(data.answers).map(
       ([questionId, answer]) => {
@@ -71,12 +70,13 @@ export const useQuizForm = (initialData?: AnswerHistory[]) => {
           answer,
           question: { id: questionId, title: question.title },
           submittedAt: new Date(),
-          user: { id: user.id as string, name: user.name as string },
+          user: { id: userId, name: userName },
         }
       }
     )
 
     await new Promise((resolve) => setTimeout(resolve, 400))
+    console.log(payload.filter((answer) => answer !== null) as UserAnswer[])
     submitAnswers(payload.filter((answer) => answer !== null) as UserAnswer[])
     setLoading(false)
     router.push(routes.home)

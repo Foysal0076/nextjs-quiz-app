@@ -43,9 +43,9 @@ export const DEFAULT_QUESTIONS: Question[] = [
     },
     options: [
       { id: '1', title: 'Royal Enfield' },
-      { id: '2', title: 'Harley Davidson' },
+      { id: '2', title: 'Honda' },
       { id: '3', title: 'Yamaha' },
-      { id: '4', title: 'BMW' },
+      { id: '4', title: 'Suzuki' },
     ],
     correctAnswer: '',
   },

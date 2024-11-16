@@ -101,7 +101,7 @@ export const getUserAnswers = (
     questionTitle: answers[0].question.title,
     answers: answers.sort(
       (a, b) =>
-        new Date(a.submittedAt).getTime() - new Date(b.submittedAt).getTime()
+        new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
     ),
   }))
 }

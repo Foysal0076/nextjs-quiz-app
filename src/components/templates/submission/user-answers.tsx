@@ -20,7 +20,6 @@ const UserAnswers = () => {
   const userAnswers = useMemo(() => getUserAnswersByUserId(userId), [userId])
 
   const userName = userAnswers[0].answers[0].user.name
-
   if (isLoading) return <Loader />
 
   if (!isAdmin && !isOwner) {
