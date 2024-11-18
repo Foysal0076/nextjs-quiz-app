@@ -15,7 +15,7 @@ const UserHome = () => {
 
   const { getUserAnswersByUserId } = useAnswerStore()
   const userAnswers = useMemo(() => getUserAnswersByUserId(userId), [userId])
-  console.log(userAnswers)
+
   const isSubmitted = userAnswers.length > 0
 
   if (isLoading) return <Loader />

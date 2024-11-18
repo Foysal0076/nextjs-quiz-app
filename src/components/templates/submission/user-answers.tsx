@@ -17,7 +17,10 @@ const UserAnswers = () => {
   const isOwner = loggedInUserId === userId
 
   const { getUserAnswersByUserId } = useAnswerStore()
-  const userAnswers = useMemo(() => getUserAnswersByUserId(userId), [userId])
+  const userAnswers = useMemo(
+    () => getUserAnswersByUserId(userId, true),
+    [userId]
+  )
 
   const userName = userAnswers[0].answers[0].user.name
   if (isLoading) return <Loader />

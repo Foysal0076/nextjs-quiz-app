@@ -1,5 +1,6 @@
+import { fireEvent, render, screen } from '@testing-library/react'
+
 import { Input } from '@/components/ui/Input'
-import { render, screen, fireEvent } from '@testing-library/react'
 
 describe('Input Component', () => {
   it('renders basic input correctly', () => {

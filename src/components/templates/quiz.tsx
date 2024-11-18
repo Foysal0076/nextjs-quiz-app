@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import Loader from '@/components/common/loader'
 import QuizForm from '@/components/quiz/quiz-form'
+import { getActiveQuestions } from '@/services/quiz.service'
 import { useAuth } from '@/shared/hooks/use-auth'
 import { useAnswerStore } from '@/store/answer-store'
 import { AnswerHistory } from '@/types/quiz.types'
@@ -18,6 +19,8 @@ const Quiz = () => {
     [participants, userId]
   )
 
+  const hasNoQuestions = getActiveQuestions().length === 0
+
   useEffect(() => {
     if (isAlreadySubmitted) {
       setUserAnswers(getUserAnswersByUserId(userId))
@@ -25,6 +28,14 @@ const Quiz = () => {
   }, [isAlreadySubmitted, userId])
 
   if (isLoading) return <Loader />
+
+  if (hasNoQuestions) {
+    return (
+      <div className='flex h-[70vh] items-center justify-center'>
+        <h1 className='h2 font-normal'>No questions found</h1>
+      </div>
+    )
+  }
 
   return (
     <div className='pb-10'>

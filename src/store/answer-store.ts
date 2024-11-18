@@ -15,8 +15,12 @@ type AnswerStore = {
 
   refreshAnswerList: () => void
   refreshParticipantList: () => void
-  // eslint-disable-next-line
-  getUserAnswersByUserId: (userId: string) => AnswerHistory[]
+  getUserAnswersByUserId: (
+    // eslint-disable-next-line
+    userId: string,
+    // eslint-disable-next-line
+    includeDeletedQuestions?: boolean
+  ) => AnswerHistory[]
   // eslint-disable-next-line
   submitAnswers: (answers: UserAnswer[]) => void
 }
@@ -46,8 +50,8 @@ export const useAnswerStore = create<AnswerStore>((set, get) => ({
     get().refreshAnswerList()
   },
 
-  getUserAnswersByUserId: (userId: string) => {
-    return getUserAnswers(userId)
+  getUserAnswersByUserId: (userId: string, includeDeletedQuestions = false) => {
+    return getUserAnswers(userId, includeDeletedQuestions)
   },
 }))
 
